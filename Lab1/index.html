@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <title>Golang</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="content">
+        <h1>Golang</h1>
+        <img src="./assets/1.png" alt="" class="img1">
+        <p>Go (Golang) — это компилируемый язык программирования с открытым исходным кодом, созданный в Google для повышения продуктивности разработки масштабных программных систем. Его история началась с боли от медленной компиляции и сложности управления большими кодовыми базами.</p>
+        <br>
+
+        <nav>
+            <ul>
+                <li class="yakori"><a href="#history">История создания</a></li>
+                <li class="yakori"><a href="#obzor">Обзор языка</a></li>
+                <li class="yakori"><a href="#examples">Примеры кода</a></li>
+            </ul>
+        </nav>
+        <div class="hhh">
+            <h2 id="history">История создания</h2>
+        </div>
+        
+        <p>В сентябре 2007 года инженеры Google Роб Пайк, Кен Томпсон и Роберт Гризмер столкнулись с проблемой: компиляция крупных проектов на C++ занимала десятки минут, что сильно замедляло разработку. Пайк позже вспоминал: «Сборки занимали 45 минут. Это было мучительно. Когда сборки длятся так долго, у тебя появляется много времени подумать, что можно было бы сделать лучше».</p>
+        <p>Помимо времени сборки, существовали и другие вызовы современного программирования, которые существующие языки (C++, Java, Python) решали неэффективно:</p>
+        <ol>
+            <li>Многоядерные процессоры требовали новых подходов к параллелизму.</li>
+            <li>Сетевые системы и огромные вычислительные кластеры нуждались в эффективной работе с сетью.</li>
+            <li>Масштаб кода: серверные программы насчитывали десятки миллионов строк, над которыми работали тысячи программистов.</li>
+        </ol>
+        <p>Трио инженеров решило создать язык, который бы сочетал скорость компиляции динамических языков с производительностью компилируемых, имея при этом встроенную поддержку параллелизма и сборку мусора.</p>
+        <p>Работа над языком шла с 2007 по 2009 год. Важным этапом стало внедрение слайсов (<code>slices</code>). Изначально в языке были «открытые массивы», но они оказались неудобными. Потребовалось больше года, чтобы разработать концепцию слайсов, которая стала одной из ключевых особенностей Go.</p>
+        <img src="./assets/2.png" alt="" class="img2">
+        <p>10 ноября 2009 года Go был выпущен как проект с открытым исходным кодом. Реакция сообщества была огромной. Уже в первый месяц 32 человека из-за пределов Google внесли свой вклад в проект.</p>
+        <p>После релиза команда продолжила вносить серьезные изменения. Одним из первых публичных предложений Роба Пайка было удаление точек с запятой в конце строк, что сделало синтаксис чище.</p>
+
+
+
+        <div class="hhh"><h2 id="obzor">Обзор языка</h2></div>
+        
+        <p>Go — это компилируемый, статически типизированный язык с автоматическим управлением памятью (сборкой мусора), разработанный для простоты, надёжности и эффективности. Он сочетает читаемость и скорость разработки динамических языков с производительностью и безопасностью компилируемых.</p>
+        <img src="./assets/3.png" alt="" class="img3">
+        <p>Синтаксис Go намеренно минималистичен — всего 25 ключевых слов, меньше, чем в большинстве популярных языков. Точки с запятой не обязательны: компилятор вставляет их автоматически в конце строк. Форматирование унифицировано инструментом <a href="https://pkg.go.dev/cmd/gofmt"><code>gofmt</code></a>, поэтому споры о стиле кода исключены. Фигурные скобки обязательны для блоков, но не для однострочных условий. Язык избегает «синтаксического сахара», отдавая приоритет однозначности и читаемости.</p>
+        <p>Go — статически типизированный язык, но с элементами гибкости. К базовым типам относятся логический, строковый, целочисленные различных разрядностей, числа с плавающей точкой, комплексные числа, а также псевдонимы byte и rune. Составные типы включают массивы фиксированной длины, слайсы (динамические массивы), карты, структуры, указатели, функции, интерфейсы и каналы. Каждый тип имеет нулевое значение по умолчанию, поэтому неинициализированных переменных не существует. Оператор короткого объявления позволяет выводить тип переменной автоматически.</p>
+        <p>Ключевые особенности языка:</p>
+        <ul class="ulimg">
+            <li>Явная обработка ошибок</li>
+            <li>Сборка мусора</li>
+            <li>Быстрая компиляция</li>
+            <li>Простой и читаемый синтаксис</li>
+        </ul>
+
+        <p>Ниже предствалены области применения:</p>
+
+        <table class="t1" summary="Области применения Go и примеры проектов">
+            <caption>Области применения Go</caption>
+            <thead>
+                <tr>
+                    <th>Область</th>
+                    <th>Примеры проектов</th>
+                    <th>Почему Go</th>
+                </tr>
+            </thead>
+            <tfoot>
+                <tr>
+                    <th colspan="3">Go — язык для инфраструктуры и облачных технологий</th>
+                </tr>
+            </tfoot>
+            <tbody>
+                <tr>
+                    <th>Контейнеризация</th>
+                    <td>Docker, containerd</td>
+                    <td>Конкурентность, статические бинарники</td>
+                </tr>
+                <tr>
+                    <th>Оркестрация</th>
+                    <td>Kubernetes, Nomad</td>
+                    <td>Сетевые возможности, надёжность</td>
+                </tr>
+                <tr>
+                    <th>Мониторинг</th>
+                    <td>Prometheus, Grafana</td>
+                    <td>Производительность, низкая latency</td>
+                </tr>
+                <tr>
+                    <th>Инфраструктура</th>
+                    <td>Terraform, etcd, Consul</td>
+                    <td>Кроссплатформенность</td>
+                </tr>
+                <tr>
+                    <th>Веб-API</th>
+                    <td>gRPC, Gin, Echo</td>
+                    <td>Быстрые серверы</td>
+                </tr>
+                <tr>
+                    <th>CLI-утилиты</th>
+                    <td>kubectl, hugo, gh</td>
+                    <td>Один бинарник без зависимостей</td>
+                </tr>
+                <tr>
+                    <th>Облачные функции</th>
+                    <td>AWS Lambda, Cloud Functions</td>
+                    <td>Быстрый холодный старт</td>
+                </tr>
+            </tbody>
+        </table>
+
+        
+        <div class="hhh"><h2 id="examples">Примеры кода</h2></div>
+        
+        
+        <h3>1. Hello, World</h3>
+        <p>Классическая точка входа в любой язык. Программа объявляет пакет <code>main</code>, импортирует пакет <code>fmt</code> для форматированного вывода и вызывает функцию <code>Println</code>.</p>
+        <pre class="code-block"><span class="blue">package</span> main
+
+    <span class="blue">import</span> <span class="str">"fmt"</span>
+
+    <span class="blue">func</span> <span class="fn">main</span>() {
+        fmt.<span class="fn">Println</span>(<span class="str">"Hello, World!"</span>)
+    }</pre>
+
+
+        <h3>2. Переменные и константы</h3>
+        <p>Go поддерживает несколько способов объявления переменных. Короткое объявление <code>:=</code> выводит тип автоматически. Константы объявляются через <code>const</code> и не могут быть изменены.</p>
+        <pre class="code-block"><code class="language-go"><span class="blue">package</span> main
+
+    <span class="blue">import</span> <span class="str">"fmt"</span>
+
+    <span class="blue">func</span> <span class="fn">main</span>() {
+        <span class="blue">var</span> name <span class="type">string</span> = <span class="str">"Go"</span>
+        <span class="blue">var</span> version = <span class="num">1.22</span>
+        language := <span class="str">"Golang"</span>
+
+        <span class="blue">const</span> pi = <span class="num">3.14159</span>
+
+        fmt.<span class="fn">Println</span>(name, version, language, pi)
+    }</code></pre>
+
+
+
+        <h3>3. Условия и циклы</h3>
+        <p>В Go только одна конструкция цикла — <code>for</code>, но она покрывает все случаи: классический цикл, цикл-условие и бесконечный цикл. Условие <code>if</code> может содержать предварительное выражение.</p>
+        <pre class="code-block"><code class="language-go"><span class="blue">package</span> main
+
+    <span class="blue">import</span> <span class="str">"fmt"</span>
+
+    <span class="blue">func</span> <span class="fn">main</span>() {
+        <span class="blue">for</span> i := <span class="num">1</span>; i &lt;= <span class="num">5</span>; i++ {
+            <span class="blue">if</span> i%<span class="num">2</span> == <span class="num">0</span> {
+                fmt.<span class="fn">Println</span>(i, <span class="str">"— чётное"</span>)
+            } <span class="blue">else</span> {
+                fmt.<span class="fn">Println</span>(i, <span class="str">"— нечётное"</span>)
+            }
+        }
+    }</code></pre>
+
+
+        <h3>4. Функции и множественные возвращаемые значения</h3>
+        <p>Go позволяет функциям возвращать несколько значений — это идиоматичный способ возврата результата вместе с ошибкой.</p>
+        <pre class="code-block"><code class="language-go"><span class="blue">package</span> main
+
+    <span class="blue">import</span> (
+        <span class="str">"errors"</span>
+        <span class="str">"fmt"</span>
+    )
+
+    <span class="blue">func</span> <span class="fn">divide</span>(a, b <span class="type">float64</span>) (<span class="type">float64</span>, <span class="type">error</span>) {
+        <span class="blue">if</span> b == <span class="num">0</span> {
+            <span class="blue">return</span> <span class="num">0</span>, errors.<span class="fn">New</span>(<span class="str">"деление на ноль"</span>)
+        }
+        <span class="blue">return</span> a / b, <span class="blue">nil</span>
+    }
+
+    <span class="blue">func</span> <span class="fn">main</span>() {
+        result, err := <span class="fn">divide</span>(<span class="num">10</span>, <span class="num">2</span>)
+        <span class="blue">if</span> err != <span class="blue">nil</span> {
+            fmt.<span class="fn">Println</span>(<span class="str">"Ошибка:"</span>, err)
+            <span class="blue">return</span>
+        }
+        fmt.<span class="fn">Println</span>(<span class="str">"Результат:"</span>, result)
+    }</code></pre>
+
+
+
+        <h3>5. Структуры и методы</h3>
+        <p>Структуры объединяют данные, а методы привязываются к типу через получателя. Композиция через встраивание заменяет наследование.</p>
+        <pre class="code-block"><code class="language-go"><span class="blue">package</span> main
+
+    <span class="blue">import</span> <span class="str">"fmt"</span>
+
+    <span class="blue">type</span> <span class="type">Person</span> <span class="blue">struct</span> {
+        Name <span class="type">string</span>
+        Age  <span class="type">int</span>
+    }
+
+    <span class="blue">func</span> (p <span class="type">Person</span>) <span class="fn">Greet</span>() <span class="type">string</span> {
+        <span class="blue">return</span> fmt.<span class="fn">Sprintf</span>(<span class="str">"Привет, меня зовут %s, мне %d лет"</span>, p.Name, p.Age)
+    }
+
+    <span class="blue">func</span> <span class="fn">main</span>() {
+        p := <span class="type">Person</span>{Name: <span class="str">"Алиса"</span>, Age: <span class="num">30</span>}
+        fmt.<span class="fn">Println</span>(p.<span class="fn">Greet</span>())
+    }</code></pre>
+
+    </div>
+    
+</body>
+</html>
