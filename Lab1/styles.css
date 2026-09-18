@@ -3,23 +3,39 @@
     src: url('assets/eshkere.otf');
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 14pt;
     color: white;
     background-color: #130707;
+    margin: 0;
+    padding: 0;
+    
+    letter-spacing: 0.2px;
+    scrollbar-color: #ff4444 #2c0d0d;
+    scrollbar-width: thin;
 }
 
+h1, h2 {
+    font-family: 'eshkere';
+}
 h1 {
     font-size: 24pt;
-    font-family: 'eshkere';
+    
     text-align: center;
     color: #ff4444;
+    text-shadow: 0px 0px 10px #ff4444;
+    padding-top: 35px;
 }
 
 h2 {
     font-size: 18pt;
     margin: 0;
+    display: block;
 }
 
 h3 {
@@ -31,12 +47,23 @@ p {
     
 }
 
+.zagolovok {
+    background-color: #240c0c;
+    height: 100px;
+    margin: 0;
+    padding: 0;
+    border-bottom: 2px solid #ff4444;
+}
+
 .content {
     background-color: #2c0d0d;
     max-width: 900px;
     margin: 0 auto;
-    padding: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
     text-align: left;
+    box-shadow: 0 0 50px rgba(255, 68, 68, 0.12);
+    word-break: break-word;
 }
 
 .hhh{
@@ -44,7 +71,11 @@ p {
     margin-top: 60px;
     background-color: #6c1b1b;
     border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
 
+.hhh:hover{
+    background-color: #7b1e1e;
 }
 
 .yakori::marker{
@@ -63,10 +94,19 @@ a:visited {
 a:hover {
   color: #ff6600;
   text-decoration: underline;
+  text-decoration-color: #ff6600;
 }
 
 a:active {
   color: #ff3700;
+}
+
+a:focus-visible {
+    outline: 2px solid #ff4444;
+}
+
+.img1, .img2, .img3 {
+    object-fit: cover;
 }
 
 .img1 {
@@ -168,6 +208,7 @@ table.t1 {
     font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
     font-size: 14px;
     line-height: 1.6;
+    tab-size: 4;
 }
 
 .code-block .blue   { color: #569cd6; }  
@@ -175,3 +216,23 @@ table.t1 {
 .code-block .num  { color: #b5cea8; }  
 .code-block .fn   { color: #dcdcaa; }  
 .code-block .type { color: #4ec9b0; }  
+
+footer {
+    background-color: #1b0808;
+    font-size: 14px;
+    color: #ad9595;
+}   
+
+.flist {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr; 
+    gap: 40px;                      
+    align-items: start;
+    max-width: 1200px; 
+    margin: 0 auto;
+}
+
+.flist ul {
+    grid-template-columns: 1fr;
+    list-style: none;
+}
