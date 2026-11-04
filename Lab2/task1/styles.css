@@ -1,0 +1,40 @@
+html {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+body {
+     display: flex;
+}
+
+.numbers {
+    display: flex;
+    gap: 87px;
+}
+
+.digit {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.row {
+    display: flex;
+    gap: 7px;
+}
+
+.False {
+    display: flex;
+    width: 87px;
+    height: 87px;
+}
+
+.True {
+    display: flex;
+    width: 87px;
+    height: 87px;
+    background-color: #222222;
+}
